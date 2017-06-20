@@ -84,7 +84,7 @@ class App extends Component {
         </form>
         {
            this.state.edit ?
-                <EditGuest />
+                <EditGuest hide={this.hideModal} guest={this.state.guestToEdit} index={this.state.guestIndex}/>
                 : null
         }
       </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './EditGuest.css';
+import { connect } from 'react-redux';
+import {updateGuest} from './../../ducks/guestList'
 
 class EditGuest extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class EditGuest extends Component {
   }
 
   update() {
+    this.props.updateGuest(this.state.text, this.props.index);
     // update guest name function
     this.props.hide();
   }
@@ -47,4 +50,4 @@ class EditGuest extends Component {
   }
 }
 
-export default EditGuest;
+export default connect(null, {updateGuest})(EditGuest);
